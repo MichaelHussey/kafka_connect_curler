@@ -3,7 +3,7 @@
 # The name of this connector
 if [ -z "$CONNECTOR_NAME" ]
 then
-	export CONNECTOR_NAME="orders-sink-connector"
+	export CONNECTOR_NAME="bigquery-sink-connector"
 fi
 
 export template="`dirname $0`/../templates/bigquery_sink.properties"
@@ -26,5 +26,5 @@ then
 	exit -1
 fi
 
-`dirname $0`/invoke_connect_rest.sh	
+`dirname $0`/invoke_connect_rest.sh	$@
 	

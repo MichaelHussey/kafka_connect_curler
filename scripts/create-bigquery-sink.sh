@@ -26,5 +26,5 @@ then
 	exit -1
 fi
 
-`dirname $0`/invoke_connect_rest.sh	$@
+`dirname $0`/invoke_connect_rest.sh $@
 	

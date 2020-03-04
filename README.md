@@ -7,10 +7,12 @@ This script reads a template JSON file and replaces any instances of `${SOME_ENV
  environment variable `SOME_ENV_NAME`
  
 It uses a command line flag to determine which of the various REST methods to invoke:
--d Delete
--u Update
--s Check the status
--v Validate the config
+Flag | Description
+-----| -----------
+-d | Delete
+-u | Update
+-s | Check the status
+-v | Validate the config
 If there is no command line flag provided a new connector instance is created.
 
 

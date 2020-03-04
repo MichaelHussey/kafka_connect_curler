@@ -85,7 +85,7 @@ EOF
 	exit
 elif [ "$1" = "-u" ]; then
 	echo "Updating connector config for $CONNECTOR_NAME"
-	URL=connector-plugins/$CONNECTOR_TYPE/config/validate
+	URL=connectors/$CONNECTOR_NAME/config
 	METHOD=PUT
 		
 eval "cat <<EOF

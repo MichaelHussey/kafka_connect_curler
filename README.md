@@ -13,6 +13,7 @@ It uses a command line flag to determine which of the various REST methods to in
 | -u | Update |
 | -s | Check the status |
 | -v | Validate the config |
+
 If there is no command line flag provided a new connector instance is created.
 
 

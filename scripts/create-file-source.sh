@@ -29,7 +29,7 @@ then
 fi
 if [ -z "$FILE_PATTERN" ]
 then
-	export FIN_DIR="^.*.csv$"
+	export FILE_PATTERN="^.*.csv$"
 fi
 
 

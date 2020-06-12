@@ -1,4 +1,4 @@
-#/bin/bash
+#/bin/bash -x
 
 # This script>
 # 1. Reads a JSON template for a Kafka Connect instance configuration
@@ -78,7 +78,7 @@ elif [ "$1" = "-v" ]; then
 eval "cat <<EOF
 $(< ${template} )
 EOF
-" 2> /dev/null | curl -i -X $METHOD \
+" 2> /dev/null | sed '/\s*#/d' | curl -i -X $METHOD \
 		    -H "Accept:application/json" \
 		    -H  "Content-Type:application/json" \
 		    $KAFKA_CONNECT_URL/$URL --data-binary @-
@@ -91,7 +91,7 @@ elif [ "$1" = "-u" ]; then
 eval "cat <<EOF
 $(< ${template} )
 EOF
-" 2> /dev/null | curl -i -X $METHOD \
+" 2> /dev/null | sed '/\s*#/d' | curl -i -X $METHOD \
 		    -H "Accept:application/json" \
 		    -H  "Content-Type:application/json" \
 		    $KAFKA_CONNECT_URL/$URL --data-binary @-
@@ -108,7 +108,7 @@ eval "cat <<EOF
 $(< ${template} )
 }
 EOF
-" 2> /dev/null | curl -i -X $METHOD \
+" 2> /dev/null | sed '/\s*#/d' | curl -i -X $METHOD \
 		    -H "Accept:application/json" \
 		    -H  "Content-Type:application/json" \
 		    $KAFKA_CONNECT_URL/$URL --data-binary @-
